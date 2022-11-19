@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+    <form action="" method="post">
+        <p>
+            <label for="name">Full name:</label>
+            <input type="text" name="name">
+        </p>
+        <p>
+            <label for="login">Login:</label>
+            <input type="text" name="login">
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" name="password">
+        </p>
+        <!-- Empty name or login or password -->
+        {% if empty_error==1 %}
+        <p style="color:red;">
+            Name or login or password fields can't be empty!
+        </p>
+        {% endif %}
+
+        <!-- User with the specified login already exists -->
+        {% if already_exists_error==1 %}
+        <p style="color:red;">
+            User with the specified login already exists!
+        </p>
+        {% endif %}
+
+        <p>
+            <input type="submit" value="registration" name="registration">
+        </p>
+    </form>
+</body>
+</html>
